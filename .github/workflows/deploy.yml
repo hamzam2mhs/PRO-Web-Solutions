@@ -16,9 +16,10 @@ jobs:
     - name: FTP Deploy
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
-        ftp-server: ${{ secrets.FTP_HOST }}
-        ftp-username: ${{ secrets.FTP_USERNAME }}
-        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        server: ${{ secrets.FTP_HOST }}  # Updated key to 'server'
+        username: ${{ secrets.FTP_USERNAME }}  # Updated key to 'username'
+        password: ${{ secrets.FTP_PASSWORD }}  # Updated key to 'password'
         local-dir: ./ # Upload everything from the repository
         server-dir: ${{ secrets.FTP_PATH }} # Destination path on your server
-        git-ftp-args: "--insecure" # Sometimes needed for some FTP servers
+        port: ${{ secrets.FTP_PORT }}  # Set the FTP port
+        git-ftp-args: "--insecure" # Optional argument for some FTP servers

@@ -4,6 +4,10 @@
 # Ignore the staging folder.
 staging/
 
+#Ignore keyFiles
+keyFile
+keyFile.pub
+
 # Ignore log files
 *.log
 

@@ -19,4 +19,15 @@ node_modules/
 # Ignore environment files
 .env
 
+# Ignore .well-known directory
+.well-known/
 
+# Ignore .htaccess and all lock files starting with .htaccess
+.htaccess*
+.htaccess.lock*
+
+# Ignore error_log
+error_log
+
+# Ignore allfiles.txt
+allfiles.txt

@@ -1,0 +1,22 @@
+# Ignore .idea folder (JetBrains IDE config files)
+.idea/
+
+# Ignore the staging folder.
+staging/
+
+# Ignore log files
+*.log
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore Python compiled files
+*.pyc
+
+# Ignore Node.js dependencies (if any)
+node_modules/
+
+# Ignore environment files
+.env
+
+

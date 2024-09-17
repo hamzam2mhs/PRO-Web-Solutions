@@ -222,66 +222,94 @@
 </div>
 </div>
 </section>
-<!-- ====== FAQ End ====== --><!-- ====== Contact Start ====== -->
-
-<section class="ud-contact" id="contact">
-<div class="container">
-<div class="row align-items-center">
-<div class="col-xl-8 col-lg-7">
-<div class="ud-contact-content-wrapper">
-<div class="ud-contact-title"><span>CONTACT US</span>
-
-<h2>Let&rsquo;s talk about your requirements<br />
-We provide free consultation!</h2>
-</div>
-
-<div class="ud-contact-info-wrapper">
-<div class="ud-single-info">
-<div class="ud-info-icon"></div>
-
-<div class="ud-info-meta">
-<h5>Our Location</h5>
-
-<p>Calgary, AB, Canada</p>
-</div>
-</div>
-
-<div class="ud-single-info">
-<div class="ud-info-icon"></div>
-
-<div class="ud-info-meta">
-<h5>How Can We Help?</h5>
-
-<p>inquire@prowebsolutions.ca</p>
-
-<p>+1 (204) 952-8742</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<div class="col-xl-4 col-lg-5">
-<div class="ud-contact-form-wrapper wow fadeInUp" data-wow-delay=".2s">
-<h3 class="ud-contact-form-title">Get in touch</h3>
-
-<form class="ud-contact-form">
-<div class="ud-form-group"><label for="fullName">Full Name*</label> <input name="fullName" placeholder="Adam Gelius" type="text" /></div>
-
-<div class="ud-form-group"><label for="email">Email*</label> <input name="email" placeholder="example@yourmail.com" type="email" /></div>
-
-<div class="ud-form-group"><label for="phone">Phone*</label> <input name="phone" placeholder="+885 1254 5211 552" type="text" /></div>
-
-<div class="ud-form-group"><label for="projectDetails">projectDetails*</label><textarea name="projectDetails" placeholder="type your project details here" rows="1"></textarea></div>
-
-<div class="ud-form-group mb-0"><button class="ud-main-btn" type="submit">Send Message</button></div>
-</form>
-</div>
-</div>
-</div>
-</div>
+<!-- ====== FAQ End ====== --><!-- Contact Form in HTML -->
+<section id="contact" class="ud-contact">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-xl-8 col-lg-7">
+				<div class="ud-contact-content-wrapper">
+					<div class="ud-contact-title">
+						<span>CONTACT US</span>
+						<h2>
+							Let’s talk about your requirements <br />
+							We provide free consultation!
+						</h2>
+					</div>
+					<div class="ud-contact-info-wrapper">
+						<div class="ud-single-info">
+							<div class="ud-info-icon">
+								<i class="lni lni-map-marker"></i>
+							</div>
+							<div class="ud-info-meta">
+								<h5>Our Location</h5>
+								<p>Winnipeg, MB, Canada</p>
+							</div>
+						</div>
+						<div class="ud-single-info">
+							<div class="ud-info-icon">
+								<i class="lni lni-envelope"></i>
+							</div>
+							<div class="ud-info-meta">
+								<h5>How Can We Help?</h5>
+								<p>info@prowebsolutions.ca</p>
+								<p>contact@prowebsolutions.ca</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xl-4 col-lg-5">
+				<div class="ud-contact-form-wrapper wow fadeInUp" data-wow-delay=".2s">
+					<h3 class="ud-contact-form-title">Send us a Message</h3>
+					<form id="contactForm" class="ud-contact-form"> <!-- Added id="contactForm" -->
+						<div class="ud-form-group">
+							<label for="fullName">Full Name*</label>
+							<input
+									type="text"
+									name="fullName"
+									placeholder="Adam Gelius"
+									required
+							/>
+						</div>
+						<div class="ud-form-group">
+							<label for="email">Email*</label>
+							<input
+									type="email"
+									name="email"
+									placeholder="example@yourmail.com"
+									required
+							/>
+						</div>
+						<div class="ud-form-group">
+							<label for="phone">Phone*</label>
+							<input
+									type="text"
+									name="phone"
+									placeholder="+885 1254 5211 552"
+									required
+							/>
+						</div>
+						<div class="ud-form-group">
+							<label for="projectDetails">Project Details*</label>
+							<textarea
+									name="projectDetails"
+									rows="1"
+									placeholder="type your message here"
+									required
+							></textarea>
+						</div>
+						<div class="ud-form-group mb-0">
+							<button type="submit" class="ud-main-btn">
+								Send Message
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
-<!-- ====== Contact End ====== -->
+<!-- contact form end -->
 
 <!-- Apply Now Modal -->
 <div id="applyModal" class="modal">
@@ -385,6 +413,27 @@ We provide free consultation!</h2>
 		function generateTicketNumber() {
 			return 'TICKET-' + Math.floor(Math.random() * 90000 + 10000);  // Generate a random 5-digit number
 		}
+	});
+</script>
+<!-- WhatsApp Script -->
+<script>
+	document.getElementById('contactForm').addEventListener('submit', function(event) {
+		event.preventDefault(); // Prevent the default form submission
+
+		// Get form values
+		const fullName = document.querySelector('input[name="fullName"]').value;
+		const email = document.querySelector('input[name="email"]').value;
+		const phone = document.querySelector('input[name="phone"]').value;
+		const projectDetails = document.querySelector('textarea[name="projectDetails"]').value;
+
+		// Construct the WhatsApp message
+		const message = `Hello, my name is ${fullName}.\nEmail: ${email}\nPhone: ${phone}\nProject Details: ${projectDetails}`;
+
+		// WhatsApp API link (replace YOUR_PHONE_NUMBER)
+		const whatsappLink = `https://api.whatsapp.com/send?phone=+12049528742&text=${encodeURIComponent(message)}`;
+
+		// Redirect to WhatsApp with pre-filled message
+		window.open(whatsappLink, '_blank'); // Opens WhatsApp in a new tab
 	});
 </script>
 

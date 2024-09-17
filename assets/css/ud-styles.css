@@ -2908,7 +2908,7 @@ p {
 .modal-content form textarea:focus + label,
 .modal-content form input:not(:placeholder-shown) + label,
 .modal-content form textarea:not(:placeholder-shown) + label {
-  top: -10px;
+  top: -18px;
   left: 10px;
   font-size: 12px;
   color: #3056d3; /* The label color when the field is focused */

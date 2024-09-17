@@ -346,39 +346,42 @@ We provide free consultation!</h2>
 	// Handle form submission with EmailJS
 	document.addEventListener('DOMContentLoaded', function () {
 		const applyForm = document.getElementById('applyForm');
+		const ticketDisplay = document.getElementById('ticketDisplay');
+		const modalContent = document.querySelector('.modal-content');
+		const thankYouMessage = document.createElement('div');
 
 		applyForm.addEventListener('submit', function (event) {
 			event.preventDefault();  // Prevent the default form submission behavior
 
-			const ticketNumber = generateTicketNumber();  // Generate the ticket number
-
+			// Collect form data
 			const formData = {
 				fullName: document.getElementById('fullName').value,
 				email: document.getElementById('email').value,
 				phone: document.getElementById('phone').value,
 				projectDetails: document.getElementById('projectDetails').value,
-				ticketNumber: ticketNumber,  // Include the generated ticket number
+				ticketNumber: generateTicketNumber() // Generate a ticket number
 			};
-			// Log the form data to the console for inspection
-			console.log("Form Data Captured: ", formData);
-			// Log the ticket no to the console for inspection
-			console.log("Generated Ticket Number:", ticketNumber);
 
 			// Send email using EmailJS
 			emailjs.send('service_50xix02', 'template_brxkird', formData)
 					.then(function(response) {
 						console.log('SUCCESS!', response.status, response.text);
-						document.getElementById('ticketId').innerText = ticketNumber;  // Display generated ticket number
-						document.getElementById('ticketDisplay').style.display = 'block';
-						applyForm.reset();  // Reset the form
+
+						// Hide the form and display the thank-you message
+						modalContent.innerHTML = `<h2>Thank you for your submission!</h2>
+                                          <p>Your ticket number is: ${formData.ticketNumber}</p>`;
+
+						// Reset the form
+						applyForm.reset();
 					}, function(error) {
 						console.error('FAILED...', error);
+						alert('Submission failed. Please try again.');
 					});
 		});
 
 		// Function to generate a unique ticket number
 		function generateTicketNumber() {
-			return 'TICKET-' + Math.floor(Math.random() * 90000 + 10000);  // Generates a random 5-digit number
+			return 'TICKET-' + Math.floor(Math.random() * 90000 + 10000);  // Generate a random 5-digit number
 		}
 	});
 </script>

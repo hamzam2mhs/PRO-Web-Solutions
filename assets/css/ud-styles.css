@@ -2946,4 +2946,65 @@ p {
   background-color: #1e40af;
 }
 
+/* Fade out effect for form */
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+/* Fade in effect for the thank you message */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Initially hide the ticket message */
+#ticketDisplay {
+  display: none;
+  text-align: center;
+  padding: 10px;
+  background-color: #eaf2ff;
+  color: #3056d3;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Optional - Smooth fade-out effect for the form */
+#applyForm {
+  opacity: 1;
+  transition: opacity 1s ease-out;
+}
+
+/* Optional - Hidden by default and fade-in effect for the thank-you message */
+#ticketDisplay {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.modal-content {
+  transition: opacity 1s ease-in-out;
+}
+
+#applyForm {
+  transition: opacity 1s ease-out;  /* Smooth fade-out for the form */
+}
+
+#ticketDisplay {
+  display: none;  /* Initially hidden */
+  opacity: 0;     /* Start with 0 opacity for fade-in effect */
+  transition: opacity 1s ease-in;  /* Smooth fade-in for thank-you message */
+}
+
+
 /*# sourceMappingURL=ud-styles.css.map */

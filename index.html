@@ -346,9 +346,7 @@ We provide free consultation!</h2>
 	// Handle form submission with EmailJS
 	document.addEventListener('DOMContentLoaded', function () {
 		const applyForm = document.getElementById('applyForm');
-		const ticketDisplay = document.getElementById('ticketDisplay');
 		const modalContent = document.querySelector('.modal-content');
-		const thankYouMessage = document.createElement('div');
 
 		applyForm.addEventListener('submit', function (event) {
 			event.preventDefault();  // Prevent the default form submission behavior
@@ -367,9 +365,13 @@ We provide free consultation!</h2>
 					.then(function(response) {
 						console.log('SUCCESS!', response.status, response.text);
 
-						// Hide the form and display the thank-you message
-						modalContent.innerHTML = `<h2>Thank you for your submission!</h2>
-                                          <p>Your ticket number is: ${formData.ticketNumber}</p>`;
+						// Update the modal with thank you message, ticket number, and additional email information
+						modalContent.innerHTML = `
+                    <h2>Thank you for your submission!</h2>
+                    <p>Your ticket number is: <strong>${formData.ticketNumber}</strong></p>
+                    <p>If you have an attachment or any additional details about your project, please email it to us at
+                    <a href="mailto:inquire@prowebsolutions.ca?subject=Ticket%20Number%20${formData.ticketNumber}&body=Please%20attach%20the%20following%20files%20for%20ticket%20${formData.ticketNumber}.">inquire@prowebsolutions.ca</a> and mention the ticket number in the subject.</p>
+                `;
 
 						// Reset the form
 						applyForm.reset();

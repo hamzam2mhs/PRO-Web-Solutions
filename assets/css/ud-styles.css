@@ -3006,5 +3006,1279 @@ p {
   transition: opacity 1s ease-in;  /* Smooth fade-in for thank-you message */
 }
 
+/* =======================================================
+   PRO WEB SOLUTIONS – CUSTOM THEME OVERRIDES
+   (Add this at the very bottom of ud-styles.css)
+   ======================================================= */
+
+/* New color system (overrides the old :root values) */
+:root {
+  --font: "Inter", sans-serif;
+  --body-color: #4b5563;       /* slate-600 */
+  --heading-color: #0f172a;    /* slate-900 */
+  --primary-color: #2563eb;    /* blue-600 */
+  --accent-color: #14b8a6;     /* teal-500 */
+  --muted-bg: #f3f4f6;         /* slate-100/200 */
+  --section-dark: #020617;     /* slate-950 */
+  --white: #ffffff;
+}
+
+/* Global tweaks */
+body {
+  color: var(--body-color);
+}
+
+/* Give buttons a more modern pill look */
+.ud-main-btn {
+  border-radius: 999px;
+  padding: 14px 26px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.ud-main-btn:hover {
+  background: #1e40af; /* darker blue on hover */
+}
+
+/* ===========================
+   HERO – new layout & colors
+   =========================== */
+
+.ud-hero {
+  background: radial-gradient(circle at top left, #1d4ed8 0, #0b1120 45%, #020617 100%);
+  padding-top: 160px;
+  padding-bottom: 80px;
+  color: var(--white);
+}
+
+/* Tag above hero title */
+.ud-hero-content .tag {
+  display: inline-block;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.15);
+  color: #e5e7eb;
+  margin-bottom: 18px;
+}
+
+/* Hero title + span highlight */
+.ud-hero-content .ud-hero-title {
+  color: var(--white);
+  font-weight: 800;
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.ud-hero-content .ud-hero-title span {
+  color: #bfdbfe; /* softer light blue highlight */
+}
+
+/* Hero description */
+.ud-hero-content .ud-hero-desc {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #e5e7eb;
+  opacity: 0.9;
+  max-width: 580px;
+  margin: 0 0 20px 0;
+  text-align: left;
+}
+
+/* Hero small line under buttons */
+.ud-hero-small {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-top: 14px;
+}
+
+/* Align hero content left on desktop, centered on mobile */
+.ud-hero-content {
+  max-width: 640px;
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .ud-hero-content {
+    margin: 0 auto 30px auto;
+  }
+  .ud-hero-content .ud-hero-title,
+  .ud-hero-content .ud-hero-desc {
+    text-align: center;
+  }
+}
+
+/* Hero buttons row */
+.ud-hero-buttons {
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+@media (max-width: 767px) {
+  .ud-hero-buttons {
+    justify-content: center;
+  }
+}
+
+/* Primary CTA already uses .ud-main-btn .ud-white-btn */
+/* Secondary "link button" style */
+.ud-link-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  color: #e5e7eb;
+  background: transparent;
+}
+
+.ud-link-btn:hover {
+  background: rgba(15, 23, 42, 0.7);
+  color: var(--white);
+  border-color: rgba(148, 163, 184, 0.9);
+}
+
+/* Keep hero image looking nice on dark bg */
+.ud-hero-image {
+  max-width: 540px;
+}
+
+/* ===========================
+   STATS STRIP
+   =========================== */
+
+.ud-stats {
+  padding: 40px 0 40px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.ud-single-stat {
+  background: #f9fafb;
+  border-radius: 14px;
+  padding: 20px 22px;
+  text-align: left;
+  height: 100%;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.06);
+}
+
+.ud-single-stat h3 {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 4px;
+}
+
+.ud-single-stat p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* ===========================
+   SERVICES / FEATURES section
+   =========================== */
+
+.ud-features {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background: #f9fafb;
+}
+
+.ud-section-title {
+  max-width: 720px;
+}
+
+/* ===========================
+   WHY FREE SECTION
+   =========================== */
+
+.ud-why-free {
+  padding: 90px 0;
+  background: #ffffff;
+}
+
+.ud-why-free .ud-section-title span {
+  color: var(--primary-color);
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+}
+
+.ud-why-free .ud-section-title h2 {
+  font-size: 32px;
+  line-height: 1.3;
+}
+
+/* Simple list style used in Why Free */
+.ud-list {
+  margin: 18px 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.ud-list li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #4b5563;
+  margin-bottom: 6px;
+}
+
+.ud-list li::before {
+  content: "•";
+  position: absolute;
+  left: 8px;
+  top: 0;
+  color: var(--accent-color);
+}
+
+/* Right-hand card with pricing summary */
+.ud-why-free-card {
+  background: #0f172a;
+  color: #e5e7eb;
+  border-radius: 16px;
+  padding: 28px 28px 24px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.4);
+}
+
+.ud-why-free-card h3 {
+  font-size: 18px;
+  margin-bottom: 18px;
+  color: #e5e7eb;
+}
+
+.ud-why-free-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 10px 0;
+  border-bottom: 1px dashed rgba(148, 163, 184, 0.5);
+}
+
+.ud-why-free-row:last-child {
+  border-bottom: none;
+}
+
+.ud-why-free-row span {
+  color: #9ca3af;
+}
+
+.ud-why-free-row strong {
+  color: #f9fafb;
+  font-weight: 600;
+}
+
+.ud-why-free-note {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-top: 14px;
+}
+
+/* ===========================
+   PROCESS SECTION
+   =========================== */
+
+.ud-process {
+  padding: 80px 0;
+  background: #f3f4f6;
+}
+
+.ud-process .ud-section-title span {
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 13px;
+}
+
+.ud-process .ud-section-title h2 {
+  font-size: 30px;
+}
+
+/* Individual step cards */
+.ud-process-step {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px 18px 22px;
+  height: 100%;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.06);
+}
+
+.ud-process-step h3 {
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+.ud-process-step p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Step number badge */
+.ud-step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.08);
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* CTA under process */
+.ud-process-cta {
+  margin-top: 34px;
+}
+
+/* ===========================
+   ABOUT / FAQ / CONTACT COLORS
+   =========================== */
+
+.ud-about {
+  background: #ffffff;
+}
+
+.ud-faq {
+  background: #f9fafb;
+}
+
+.ud-contact::after {
+  background: #f3f4f6;
+}
+
+/* Make FAQ buttons a bit neater on the new palette */
+.ud-single-faq .ud-faq-btn {
+  font-size: 16px;
+}
+
+.ud-single-faq .ud-faq-btn span.icon {
+  background: rgba(37, 99, 235, 0.08);
+  color: var(--primary-color);
+}
+
+/* ===========================
+   CONTACT FORM – slight tweaks
+   =========================== */
+
+.ud-contact-form-wrapper {
+  border-radius: 16px;
+}
+
+.ud-contact-form-wrapper .ud-contact-form-title {
+  font-size: 24px;
+}
+
+/* Contact inputs hover/focus feel */
+.ud-contact-form-wrapper .ud-form-group input,
+.ud-contact-form-wrapper .ud-form-group textarea {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.ud-contact-form-wrapper .ud-form-group input:focus,
+.ud-contact-form-wrapper .ud-form-group textarea:focus {
+  border-color: var(--primary-color);
+}
+
+/* ===========================
+   MODAL / APPLY FORM COLOR ALIGNMENT
+   =========================== */
+
+#applyModal h2 {
+  color: var(--primary-color);
+}
+
+.modal-content form button[type="submit"] {
+  background-color: var(--primary-color);
+}
+
+.modal-content form button[type="submit"]:hover {
+  background-color: #1e40af;
+}
+
+/* Ticket display color match */
+#ticketDisplay {
+  background-color: #e0edff;
+  color: var(--primary-color);
+}
+
+/* =========================================
+   PREMIUM STYLING – SERVICES / PROCESS / ABOUT / CONTACT
+   ========================================= */
+
+/* ========== SERVICES (Features) SECTION ========== */
+
+.ud-features {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  background: radial-gradient(circle at top left, #eff6ff 0, #f9fafb 45%, #ffffff 100%);
+}
+
+.ud-features .ud-section-title {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ud-features .ud-section-title span {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 13px;
+}
+
+.ud-features .ud-section-title h2 {
+  font-size: 32px;
+  line-height: 1.3;
+}
+
+.ud-features .ud-section-title p {
+  font-size: 16px;
+  color: #6b7280;
+}
+
+/* Feature cards */
+.ud-single-feature {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 24px 22px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.ud-single-feature::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 60%);
+  top: -40px;
+  right: -40px;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.ud-single-feature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+  border-color: rgba(37, 99, 235, 0.5);
+}
+
+/* Feature icon */
+.ud-single-feature .ud-feature-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: radial-gradient(circle at top left, #2563eb, #1d4ed8);
+  font-size: 26px;
+  margin-bottom: 18px;
+}
+
+.ud-single-feature .ud-feature-title {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.ud-single-feature .ud-feature-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 0;
+  color: #6b7280;
+}
+
+/* ========== ABOUT SECTION ========== */
+
+.ud-about {
+  background: linear-gradient(135deg, #020617 0%, #0b1220 40%, #020617 100%);
+  padding: 100px 0;
+}
+
+.ud-about-wrapper {
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  box-shadow: 0 28px 80px rgba(15, 23, 42, 0.7);
+  background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), #020617);
+}
+
+.ud-about-content-wrapper {
+  padding: 60px 60px 60px;
+}
+
+@media (max-width: 767px) {
+  .ud-about-content-wrapper {
+    padding: 38px 28px;
+  }
+}
+
+/* Tag */
+.ud-about-content .tag {
+  background: rgba(37, 99, 235, 0.2);
+  color: #e5e7eb;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* About heading & text */
+.ud-about-content h2 {
+  color: #f9fafb;
+  font-size: 30px;
+  line-height: 1.3;
+}
+
+.ud-about-content p {
+  color: #cbd5f5;
+  font-size: 15px;
+}
+
+/* CTA button in about */
+.ud-about-content .ud-main-btn {
+  background: #f97316;
+  border-color: transparent;
+}
+
+.ud-about-content .ud-main-btn:hover {
+  background: #ea580c;
+}
+
+/* Make about image sit nicely on dark background */
+.ud-about-image {
+  background: radial-gradient(circle at center, rgba(37, 99, 235, 0.2), transparent 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========== PROCESS SECTION ========== */
+
+.ud-process {
+  padding: 90px 0;
+  background: #020617;
+  color: #e5e7eb;
+}
+
+.ud-process .ud-section-title {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ud-process .ud-section-title h2 {
+  color: #f9fafb;
+  font-size: 30px;
+}
+
+.ud-process .ud-section-title p {
+  color: #9ca3af;
+  font-size: 15px;
+}
+
+/* Step cards */
+.ud-process-step {
+  background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), #020617);
+  border-radius: 18px;
+  padding: 20px 18px 22px;
+  height: 100%;
+  border: 1px solid rgba(75, 85, 99, 0.7);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.75);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.ud-process-step::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.4), transparent 40%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.ud-process-step:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 70px rgba(15, 23, 42, 0.9);
+  border-color: rgba(59, 130, 246, 0.9);
+}
+
+.ud-process-step:hover::before {
+  opacity: 1;
+}
+
+/* Step number */
+.ud-step-number {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: radial-gradient(circle at top left, #2563eb, #0ea5e9);
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* Text inside step */
+.ud-process-step h3 {
+  color: #e5e7eb;
+  font-size: 16px;
+}
+
+.ud-process-step p {
+  color: #cbd5f5;
+  font-size: 14px;
+}
+
+/* ========== CONTACT SECTION ========== */
+
+.ud-contact {
+  padding: 100px 0;
+}
+
+/* Background for top half */
+.ud-contact::after {
+  background: linear-gradient(135deg, #020617 0%, #0b1220 50%, #020617 100%);
+}
+
+/* Title area */
+.ud-contact-title span {
+  color: #e5e7eb;
+}
+
+.ud-contact-title h2 {
+  color: #f9fafb;
+}
+
+/* Info blocks (location, email, phone) */
+.ud-contact-info-wrapper .ud-single-info {
+  background: rgba(15, 23, 42, 0.85);
+  border-radius: 18px;
+  padding: 18px 20px;
+  box-shadow: 0 20px 55px rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.5);
+}
+
+.ud-contact-info-wrapper .ud-info-meta h5 {
+  color: #e5e7eb;
+}
+
+.ud-contact-info-wrapper .ud-info-meta p {
+  color: #cbd5f5;
+}
+
+/* Contact form card */
+.ud-contact-form-wrapper {
+  position: relative;
+  border-radius: 20px;
+  padding: 50px 40px;
+  background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), #020617);
+  color: #e5e7eb;
+  box-shadow: 0 26px 70px rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  overflow: hidden;
+}
+
+/* Accent border on top */
+.ud-contact-form-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -10%;
+  width: 120%;
+  height: 3px;
+  background: linear-gradient(90deg, #22c55e, #2563eb, #a855f7);
+}
+
+/* Form title */
+.ud-contact-form-wrapper .ud-contact-form-title {
+  color: #f9fafb;
+}
+
+/* Inputs */
+.ud-contact-form-wrapper .ud-form-group label {
+  color: #cbd5f5;
+}
+
+.ud-contact-form-wrapper .ud-form-group input,
+.ud-contact-form-wrapper .ud-form-group textarea {
+  border-bottom: 1px solid rgba(148, 163, 184, 0.6);
+  color: #e5e7eb;
+  background: transparent;
+}
+
+.ud-contact-form-wrapper .ud-form-group input::placeholder,
+.ud-contact-form-wrapper .ud-form-group textarea::placeholder {
+  color: #6b7280;
+}
+
+.ud-contact-form-wrapper .ud-form-group input:focus,
+.ud-contact-form-wrapper .ud-form-group textarea:focus {
+  border-color: #60a5fa;
+}
+
+/* Submit button */
+.ud-contact-form-wrapper .ud-main-btn {
+  width: 100%;
+  justify-content: center;
+  background: linear-gradient(90deg, #22c55e, #2563eb);
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.ud-contact-form-wrapper .ud-main-btn:hover {
+  background: linear-gradient(90deg, #16a34a, #1d4ed8);
+}
+
+/* =========================================
+   PREMIUM DARK-SLATE PALETTE (NO WHITE SECTIONS)
+   Applies to: Services, Process, About, Contact
+   ========================================= */
+
+/* Global page background (rich dark navy) */
+body {
+  background-color: #020617; /* deep slate/navy */
+}
+
+/* ---------- SHARED SECTION BACKGROUNDS ---------- */
+/* These are the section wrappers (strip backgrounds) */
+.ud-features,
+.ud-about,
+.ud-process,
+.ud-contact {
+  background: radial-gradient(circle at top left, #020617 0%, #020617 40%, #020617 100%);
+}
+
+/* Optional: give them consistent vertical spacing */
+.ud-features,
+.ud-process,
+.ud-contact {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+/* ---------- TITLES ON DARK BACKGROUND ---------- */
+
+.ud-features .ud-section-title,
+.ud-process .ud-section-title,
+.ud-about .ud-about-content,
+.ud-contact-title {
+  color: #e5e7eb;
+}
+
+.ud-features .ud-section-title span,
+.ud-process .ud-section-title span,
+.ud-contact-title span {
+  color: #60a5fa;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 12px;
+}
+
+.ud-features .ud-section-title h2,
+.ud-process .ud-section-title h2,
+.ud-about-content h2,
+.ud-contact-title h2 {
+  color: #f9fafb;
+}
+
+.ud-features .ud-section-title p,
+.ud-process .ud-section-title p,
+.ud-about-content p {
+  color: #cbd5f5;
+}
+
+/* =========================================
+   SERVICES (FEATURES)
+   ========================================= */
+
+.ud-features {
+  /* already dark from shared selector above */
+}
+
+/* Service cards use slightly lighter dark + subtle accent glow */
+.ud-single-feature {
+  background: #020617;
+  border-radius: 20px;
+  padding: 24px 22px;
+  border: 1px solid rgba(148, 163, 184, 0.55);
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.9);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.ud-single-feature::after {
+  content: "";
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 999px;
+  background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.3), transparent 65%);
+  top: -50px;
+  right: -40px;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.ud-single-feature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 80px rgba(15, 23, 42, 1);
+  border-color: rgba(59, 130, 246, 0.95);
+}
+
+.ud-single-feature .ud-feature-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: radial-gradient(circle at top left, #2563eb, #1d4ed8);
+  font-size: 26px;
+  color: #f9fafb;
+  margin-bottom: 18px;
+}
+
+.ud-single-feature .ud-feature-title {
+  font-size: 18px;
+  color: #e5e7eb;
+  margin-bottom: 8px;
+}
+
+.ud-single-feature .ud-feature-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #cbd5f5;
+  margin-bottom: 0;
+}
+
+/* =========================================
+   ABOUT
+   ========================================= */
+
+.ud-about {
+  /* dark background already applied above */
+}
+
+.ud-about-wrapper {
+  background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), #020617);
+  border-radius: 24px;
+  border: 1px solid rgba(148, 163, 184, 0.65);
+  box-shadow: 0 30px 90px rgba(15, 23, 42, 1);
+}
+
+.ud-about-content .tag {
+  background: rgba(59, 130, 246, 0.14);
+  color: #e5e7eb;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* Button in About pops with warm accent */
+.ud-about-content .ud-main-btn {
+  background: #f97316;
+  border-color: transparent;
+}
+
+.ud-about-content .ud-main-btn:hover {
+  background: #ea580c;
+}
+
+/* =========================================
+   PROCESS
+   ========================================= */
+
+.ud-process {
+  /* You’ll have this section in HTML with class="ud-process" */
+}
+
+.ud-process .ud-secti
+
+  /* =========================================
+     MODERN CONSULTATION FORM – CONTACT SECTION
+     ========================================= */
+
+.ud-contact-form-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtitle under the form title */
+.ud-contact-form-subtitle {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #9ca3af;
+  margin-bottom: 24px;
+}
+
+/* Grid layout for the form */
+.ud-contact-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 18px;
+}
+
+/* On mobile: single column */
+@media (max-width: 767px) {
+  .ud-contact-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Full-width fields (textarea + actions) */
+.ud-form-group-full {
+  grid-column: 1 / -1;
+}
+
+/* Base form group styling */
+.ud-contact-form-wrapper .ud-form-group {
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+.ud-contact-form-wrapper .ud-form-group label {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  margin-bottom: 6px;
+  color: #e5e7eb;
+}
+
+/* Inputs, selects, textareas */
+.ud-contact-form-wrapper .ud-form-group input,
+.ud-contact-form-wrapper .ud-form-group select,
+.ud-contact-form-wrapper .ud-form-group textarea {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.55);
+  padding: 12px 14px;
+  background-color: rgba(15, 23, 42, 0.9);
+  color: #f9fafb;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+/* Remove old underline look */
+.ud-contact-form-wrapper .ud-form-group input,
+.ud-contact-form-wrapper .ud-form-group textarea {
+  border-bottom-width: 1px; /* keep border uniform */
+}
+
+/* Placeholder color */
+.ud-contact-form-wrapper .ud-form-group input::placeholder,
+.ud-contact-form-wrapper .ud-form-group textarea::placeholder {
+  color: #6b7280;
+}
+
+/* Focus state */
+.ud-contact-form-wrapper .ud-form-group input:focus,
+.ud-contact-form-wrapper .ud-form-group select:focus,
+.ud-contact-form-wrapper .ud-form-group textarea:focus {
+  border-color: #60a5fa;
+  background-color: rgba(15, 23, 42, 0.98);
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.25);
+}
+
+/* Select field caret color tweak */
+.ud-contact-form-wrapper .ud-form-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #9ca3af 50%),
+  linear-gradient(135deg, #9ca3af 50%, transparent 50%);
+  background-position: calc(100% - 16px) 52%, calc(100% - 11px) 52%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+/* Textarea */
+.ud-contact-form-wrapper .ud-form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Actions row (button + small text) */
+.ud-form-actions {
+  margin-top: 6px;
+  text-align: left;
+}
+
+/* Make main CTA full-width and rounded */
+.ud-contact-form-wrapper .ud-form-actions .ud-main-btn {
+  width: 100%;
+  justify-content: center;
+  border-radius: 999px;
+  font-size: 15px;
+}
+
+/* Footnote under button */
+.ud-form-footnote {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* Slight top accent line on the form card (if background is dark) */
+.ud-contact-form-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -20%;
+  width: 140%;
+  height: 2px;
+  background: linear-gradient(90deg, #22c55e, #2563eb, #a855f7);
+  opacity: 0.7;
+}
+
+/* =========================================
+   MODERN "APPLY NOW" MODAL
+   ========================================= */
+
+/* Dark blurred overlay */
+/* =========================================
+   APPLY NOW – LEFT SLIDE-IN DRAWER (SCROLLABLE)
+   ========================================= */
+
+/* Full-screen container for overlay + drawer */
+#applyModal {
+  display: none;              /* JS will toggle this */
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+}
+
+/* Dark overlay behind the drawer */
+#applyModal::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+/* Drawer container pinned to the left */
+#applyModal .modal-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  pointer-events: none; /* so only the card receives clicks */
+}
+
+/* Drawer card */
+#applyModal .modal-content.apply-modal-card {
+  pointer-events: auto;
+  height: 100vh;
+  max-width: 420px;
+  width: 100%;
+  margin: 0;
+  padding: 24px 24px 22px;
+  border-radius: 0 24px 24px 0;
+  border: 1px solid rgba(148, 163, 184, 0.65);
+  background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), #020617);
+  box-shadow: 0 32px 100px rgba(15, 23, 42, 1);
+  color: #e5e7eb;
+
+  /* SCROLLABLE CONTENT */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  /* Slide-in animation */
+  animation: applyDrawerSlideIn 0.28s ease-out;
+}
+
+/* On very small screens, make it almost full width */
+@media (max-width: 767px) {
+  #applyModal .modal-content.apply-modal-card {
+    max-width: 100%;
+    border-radius: 0 0 24px 0;
+    padding: 22px 20px 20px;
+  }
+}
+
+/* Header */
+.apply-modal-header {
+  margin-bottom: 20px;
+}
+
+.apply-modal-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #f9fafb;
+}
+
+.apply-modal-header p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #9ca3af;
+}
+
+/* Close button in top-right of drawer */
+#applyModal .close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#applyModal .close:hover {
+  color: #e5e7eb;
+}
+
+/* Form layout – two-column grid like contact form */
+.apply-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 14px;
+}
+
+/* Single column on small screens */
+@media (max-width: 767px) {
+  .apply-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Full-width fields */
+.apply-form-group-full {
+  grid-column: 1 / -1;
+}
+
+/* Form groups */
+.apply-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+.apply-form-group label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  color: #d1d5db;
+}
+
+/* Inputs & textarea */
+.apply-form-group input,
+.apply-form-group textarea {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.55);
+  padding: 10px 12px;
+  background-color: rgba(15, 23, 42, 0.95);
+  color: #f9fafb;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+/* Placeholders */
+.apply-form-group input::placeholder,
+.apply-form-group textarea::placeholder {
+  color: #6b7280;
+}
+
+/* Focus state */
+.apply-form-group input:focus,
+.apply-form-group textarea:focus {
+  border-color: #60a5fa;
+  background-color: rgba(15, 23, 42, 0.98);
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.25);
+}
+
+/* Textarea */
+.apply-form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Actions (button + small note) */
+.apply-form-actions {
+  margin-top: 4px;
+}
+
+/* Button – full-width and pill-shaped */
+.apply-btn-styled {
+  width: 100%;
+  justify-content: center;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #22c55e, #2563eb);
+  border: none;
+}
+
+.apply-btn-styled:hover {
+  background: linear-gradient(90deg, #16a34a, #1d4ed8);
+}
+
+/* Note below the button */
+.apply-form-footnote {
+  margin-top: 8px;
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+/* Accent line on top of drawer */
+#applyModal .modal-content.apply-modal-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -20%;
+  width: 140%;
+  height: 2px;
+  background: linear-gradient(90deg, #22c55e, #2563eb, #a855f7);
+  opacity: 0.8;
+}
+
+/* Slide-in animation */
+@keyframes applyDrawerSlideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
 
 /*# sourceMappingURL=ud-styles.css.map */

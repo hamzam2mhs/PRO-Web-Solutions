@@ -1,0 +1,5 @@
+node_modules/
+dist/
+public_html/
+.idea/
+.DS_Store

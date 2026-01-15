@@ -18,13 +18,35 @@ export default function Contact() {
     projectDetails: '',
   });
 
-  const handleSubmit = (e) => {
+  const GOOGLE_SCRIPT_URL =
+      "https://script.google.com/macros/s/AKfycbzl91sG3KNnkmB8aVR8kRCFnGzPerse3GcMTZjJA8SNo8kdpznxmu8vYin3SoFr1_QREg/exec";
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would normally send the form data to your backend
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
+
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({
+          secret: "CHANGE_ME_LONG_RANDOM",
+          ...formData,
+          source: window.location.hostname,
+          website: "" // honeypot field
+        }),
+      });
+
+      setIsSubmitted(true);
+      setTimeout(() => setIsSubmitted(false), 3000);
+
+      // optional: clear fields after success
+      // setFormData({ fullName:'', email:'', phone:'', projectType:'', projectDetails:'' });
+    } catch (err) {
+      console.error("Submit failed:", err);
+      alert("Sorry — your message didn’t send. Please email inquire@prowebsolutions.ca.");
+    }
   };
+
 
   const handleChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));

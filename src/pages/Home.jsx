@@ -6,7 +6,7 @@ import Layout from '../Layout'
 import Hero from '../components/home/Hero'
 import Services from '../components/home/Services'
 import Process from '../components/home/Process'
-import Faq from '../components/home/Faq'
+import Faq from '../components/home/FAQ'
 import ContactForm from '../components/home/Contact'
 
 export default function Home() {

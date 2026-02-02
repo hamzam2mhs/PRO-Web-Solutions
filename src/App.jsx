@@ -4,7 +4,7 @@ import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import Services from './pages/Services'
 import Process from './pages/Process'
-import Faq from './pages/Faq'
+import Faq from './pages/FAQ'
 import About from './pages/About'
 import Contact from './pages/Contact'
 

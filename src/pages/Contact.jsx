@@ -11,9 +11,13 @@ export default function Contact() {
                     name="description"
                     content="Contact PRO Web Solutions for a free consultation about websites, AI automation, and AWS cloud infrastructure services in Canada."
                 />
+                <link
+                    rel="canonical"
+                    href="https://www.prowebsolutions.ca/contact"
+                />
             </Helmet>
 
-            <ContactPageContent />
+            <ContactPageContent/>
         </Layout>
     )
 }

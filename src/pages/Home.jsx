@@ -30,11 +30,15 @@ export default function Home() {
                     name="description"
                     content="PRO Web Solutions helps small businesses launch professional websites, automate workflows with AI, and build scalable AWS infrastructure across Canada."
                 />
+                <link
+                    rel="canonical"
+                    href="https://www.prowebsolutions.ca/"
+                />
             </Helmet>
 
-            <Hero />
-            <Services />
-            <Process />
+            <Hero/>
+            <Services/>
+            <Process/>
             <Faq />
 
             <section id="contact-form">

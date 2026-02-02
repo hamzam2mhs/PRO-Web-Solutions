@@ -11,9 +11,13 @@ export default function About() {
                     name="description"
                     content="PRO Web Solutions helps businesses grow through professional web development, AI automation, and scalable AWS cloud infrastructure. Based in Calgary."
                 />
+                <link
+                    rel="canonical"
+                    href="https://www.prowebsolutions.ca/about"
+                />
             </Helmet>
 
-            <AboutPageContent />
+            <AboutPageContent/>
         </Layout>
     )
 }

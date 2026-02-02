@@ -13,9 +13,13 @@ export default function Services() {
                     name="description"
                     content="Professional website development, AI automation, and AWS cloud infrastructure services for startups and small businesses in Canada."
                 />
+                <link
+                    rel="canonical"
+                    href="https://www.prowebsolutions.ca/services"
+                />
             </Helmet>
 
-            <ServicesPageContent />
+            <ServicesPageContent/>
         </Layout>
     )
 }

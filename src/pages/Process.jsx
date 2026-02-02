@@ -13,9 +13,13 @@ export default function Process() {
                     name="description"
                     content="Learn how PRO Web Solutions designs, builds, and launches websites, AI automation, and AWS infrastructure using a clear, step-by-step process."
                 />
+                <link
+                    rel="canonical"
+                    href="https://www.prowebsolutions.ca/process"
+                />
             </Helmet>
 
-            <ProcessPageContent />
+            <ProcessPageContent/>
         </Layout>
     )
 }

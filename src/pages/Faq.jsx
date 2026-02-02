@@ -11,9 +11,13 @@ export default function Faq() {
                     name="description"
                     content="Frequently asked questions about websites, AI automation, AWS infrastructure, pricing, timelines, and how PRO Web Solutions works."
                 />
+                <link
+                    rel="canonical"
+                    href="https://www.prowebsolutions.ca/faq"
+                />
             </Helmet>
 
-            <FaqPageContent />
+            <FaqPageContent/>
         </Layout>
     )
 }

@@ -10,42 +10,62 @@ export default function Layout({ children }) {
     const location = useLocation()
     const navigate = useNavigate()
 
+    const isHome = location.pathname === '/'
+
+    /* -----------------------------
+       Scroll state for navbar style
+    ------------------------------*/
     useEffect(() => {
         const handleScroll = () => setIsScrolled(window.scrollY > 20)
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
+    /* -----------------------------
+       Consultation CTA logic
+    ------------------------------*/
     const handleConsultationClick = () => {
-        if (location.pathname === '/') {
+        setIsMobileMenuOpen(false)
+
+        if (isHome) {
             document
                 .getElementById('contact-form')
                 ?.scrollIntoView({ behavior: 'smooth' })
         } else {
             navigate('/#contact-form')
         }
-        setIsMobileMenuOpen(false)
     }
 
-    const NavItem = ({ label, to }) => (
-        <Link
-            to={to}
-            className="text-slate-300 hover:text-white transition-colors"
-            onClick={() => setIsMobileMenuOpen(false)}
-        >
-            {label}
-        </Link>
-    )
+    /* -----------------------------
+       Nav Item (route-based only)
+    ------------------------------*/
+    const NavItem = ({ label, to }) => {
+        const isActive = location.pathname === to
+
+        return (
+            <Link
+                to={to}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`block py-2 transition-colors ${
+                    isActive
+                        ? 'text-white font-semibold'
+                        : 'text-slate-300 hover:text-white'
+                }`}
+            >
+                {label}
+            </Link>
+        )
+    }
 
     return (
         <div className="min-h-screen bg-slate-950">
-            {/* NAVBAR */}
+            {/* ================= NAVBAR ================= */}
             <nav
                 className={`fixed top-0 left-0 right-0 z-[9999]
-          bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950
-          transition-all duration-300
-          ${isScrolled ? 'backdrop-blur-lg border-b border-slate-800' : ''}
-        `}
+        bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950
+        transition-all duration-300
+        ${isScrolled ? 'backdrop-blur-lg border-b border-slate-800' : ''}
+      `}
             >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-20">
@@ -78,20 +98,21 @@ export default function Layout({ children }) {
                             </Button>
                         </div>
 
-                        {/* MOBILE MENU BUTTON */}
+                        {/* MOBILE TOGGLE */}
                         <button
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                             className="md:hidden text-white p-2"
+                            aria-label="Toggle menu"
                         >
                             {isMobileMenuOpen ? <X /> : <Menu />}
                         </button>
                     </div>
                 </div>
 
-                {/* MOBILE MENU */}
+                {/* ================= MOBILE MENU ================= */}
                 {isMobileMenuOpen && (
                     <div className="md:hidden bg-slate-900 border-t border-slate-800">
-                        <div className="px-4 py-6 space-y-4">
+                        <div className="px-4 py-6 space-y-3">
                             <NavItem label="Services" to="/services" />
                             <NavItem label="Process" to="/process" />
                             <NavItem label="FAQ" to="/faq" />
@@ -100,7 +121,7 @@ export default function Layout({ children }) {
 
                             <Button
                                 onClick={handleConsultationClick}
-                                className="w-full bg-blue-600 hover:bg-blue-700"
+                                className="w-full bg-blue-600 hover:bg-blue-700 mt-4"
                             >
                                 Get Free Consultation
                             </Button>
@@ -109,7 +130,7 @@ export default function Layout({ children }) {
                 )}
             </nav>
 
-            {/* PAGE CONTENT */}
+            {/* ================= PAGE CONTENT ================= */}
             <main style={{ paddingTop: '80px' }}>{children}</main>
         </div>
     )

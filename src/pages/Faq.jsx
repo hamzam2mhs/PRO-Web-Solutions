@@ -7,14 +7,24 @@ export default function Faq() {
         <Layout>
             <Helmet>
                 <title>FAQs | PRO Web Solutions</title>
+
                 <meta
                     name="description"
-                    content="Frequently asked questions about websites, AI automation, AWS infrastructure, pricing, timelines, and how PRO Web Solutions works."
+                    content="Frequently asked questions about free websites, AI automation, AWS cloud infrastructure, pricing, timelines, and how PRO Web Solutions works."
                 />
+
                 <link
                     rel="canonical"
                     href="https://www.prowebsolutions.ca/faq"
                 />
+
+                <meta property="og:title" content="FAQs | PRO Web Solutions" />
+                <meta
+                    property="og:description"
+                    content="Answers to common questions about websites, AI automation, AWS infrastructure, and working with PRO Web Solutions."
+                />
+                <meta property="og:url" content="https://www.prowebsolutions.ca/faq" />
+                <meta property="og:type" content="website" />
             </Helmet>
 
             <FaqPageContent/>

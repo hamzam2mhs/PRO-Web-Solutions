@@ -23,17 +23,25 @@ export default function Home() {
     return (
         <Layout>
             <Helmet>
-                <title>
-                    PRO Web Solutions | Free Business Websites, AI Automation & AWS
-                </title>
+                <title>PRO Web Solutions | Free Starter Websites in Canada</title>
+
                 <meta
                     name="description"
-                    content="PRO Web Solutions helps small businesses launch professional websites, automate workflows with AI, and build scalable AWS infrastructure across Canada."
+                    content="Free starter websites for small businesses and startups in Canada. Web development, AWS cloud hosting, AI automation, and scalable digital solutions."
                 />
+
                 <link
                     rel="canonical"
                     href="https://www.prowebsolutions.ca/"
                 />
+
+                <meta property="og:title" content="PRO Web Solutions | Free Starter Websites in Canada" />
+                <meta
+                    property="og:description"
+                    content="Free starter websites for small businesses and startups in Canada. Web, cloud, AI automation, and scalable solutions."
+                />
+                <meta property="og:url" content="https://www.prowebsolutions.ca/" />
+                <meta property="og:type" content="website" />
             </Helmet>
 
             <Hero/>

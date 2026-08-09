@@ -20,6 +20,40 @@
           name="twitter:description"
           content="Free starter websites for small businesses and startups in Canada. Web, AWS hosting, mobile apps, and marketing support."
   />
+
+  <!-- Primary description (used by Google for snippets) -->
+  <meta
+          name="description"
+          content="Free starter websites for small businesses and startups in Canada. Web, AWS hosting, mobile apps, and marketing support."
+  />
+
+  <!-- Open Graph (Facebook / Instagram link previews) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://prowebsolutions.ca/" />
+  <meta property="og:site_name" content="PRO Web Solutions" />
+  <meta property="og:title" content="PRO Web Solutions | Free Starter Websites in Canada" />
+  <meta
+          property="og:description"
+          content="Free starter websites for small businesses and startups in Canada. Web, AWS hosting, mobile apps, and marketing support."
+  />
+
+  <!-- Meta Pixel: init only. PageView is fired by the React app
+       (src/lib/usePixelPageView.js) on load + every route change,
+       so it is NOT tracked here — that would double-count. -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1068999912142635');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1068999912142635&ev=PageView&noscript=1"
+  /></noscript>
 </head>
 
 <body class="bg-slate-950">
